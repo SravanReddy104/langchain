@@ -1,6 +1,5 @@
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, FewShotPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -31,7 +30,7 @@ examples = [
     }
 ]
 example_template = """
-Check the ticket below and provide a category for it: {input}
+Ticket: {input}
 Category: {output}"""
 fewShotPrompt = FewShotPromptTemplate(
     examples=examples,
